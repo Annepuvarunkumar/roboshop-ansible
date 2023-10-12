@@ -15,14 +15,14 @@
         name: mysql communit server
         state: installed
 
-    - name: Start service
+    - name: Start MySQL service
       ansible.builtin.systemd:
-       name: mysql
+       name: mysqld
        state: restarted
        enabled: yes
 
     - name: Set Root Password
-      ansible.builtin.shell: mysql_secure_installation --set-root-pass ${mysql_root_password}
+      ansible.builtin.shell: mysql_secure_installation --set-root-pass Roboshop@1
 
 
 
