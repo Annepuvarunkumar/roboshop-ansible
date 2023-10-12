@@ -20,9 +20,4 @@
 
 
 
-#echo -e "\e[36m>>>>>>>>>>>>>>> create ${component} service <<<<<<<<<<<<<<<\e[0m"...ansible take care of loaction
-#cp ${component}.service /etc/systemd/system/${component}.service &>>${log}
-#func_exit_status
-
-
 

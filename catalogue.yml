@@ -1,4 +1,4 @@
-- name: Catalogue  Setup
+- name: Catalogue Setup
   hosts: all
   become: yes
   vars:
