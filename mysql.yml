@@ -12,7 +12,7 @@
 
     - name: Install MySQL Community Server
       ansible.builtin.yum:
-        name: mysql communit server
+        name: mysql community server
         state: installed
 
     - name: Start MySQL service
