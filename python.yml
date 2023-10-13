@@ -1,0 +1,34 @@
+#sed -i "s/rabbitmq_app_password/${rabbitmq_app_password}/" /etc/systemd/system/${component}.service
+#
+#echo -e "\e[36m>>>>>>>>>>>>>>> Build ${component} service <<<<<<<<<<<<<<<\e[0m"
+#pip3.6 install -r requirements.txt &>>${log}
+#func_exit_status
+#
+#func_systemd
+
+- name: Install Python
+  ansible.builtin.yum:
+    name:
+      - python36
+      - gcc
+      - python3-devel
+    state: installed
+
+- name: App pre-requisites
+  ansible.builtin.import_tasks: app-preq.yml
+
+
+- name:
+  ansible.builtin.replace:
+    path: /etc/systemd/system/
+    regexp: 's/rabbitmq_app_password'
+    replace: 'rabbitmq_app_password'
+
+
+- name: Install Python Dependencies
+  ansible.builtin.shell: pip3.6 install -r requirements.txt
+  args:
+    chdir: /app
+
+- name: SystemD setup
+  ansible.builtin.import_tasks: systemd-setup.yml
