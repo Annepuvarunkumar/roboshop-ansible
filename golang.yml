@@ -7,7 +7,7 @@
   ansible.builtin.import_tasks: app-preq.yml
 
 - name: Download Golang Dependencies
-  ansible.builtin.yum:
+  ansible.builtin.shell:
     name:
       - go mod init {{component}}
       - go get
