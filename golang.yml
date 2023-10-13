@@ -9,7 +9,7 @@
 - name: Download Golang Dependencies
   ansible.builtin.yum:
     name:
-      - go mod init dispatch
+      - go mod init {{component}}
       - go get
       - go build
 
