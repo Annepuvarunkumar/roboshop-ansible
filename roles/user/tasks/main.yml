@@ -1,6 +1,6 @@
 - name: NodeJS setup
   ansible.builtin.import_role:
-    name: commom
+    name: common
     tasks_from: nodejs
 
 
