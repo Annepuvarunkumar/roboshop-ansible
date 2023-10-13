@@ -17,14 +17,6 @@
 - name: App pre-requisites
   ansible.builtin.import_tasks: app-preq.yml
 
-
-- name:
-  ansible.builtin.replace:
-    path: /etc/systemd/system/
-    regexp: 's/rabbitmq_app_password'
-    replace: 'rabbitmq_app_password'
-
-
 - name: Install Python Dependencies
   ansible.builtin.shell: pip3.6 install -r requirements.txt
   args:
