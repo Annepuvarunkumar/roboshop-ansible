@@ -9,5 +9,9 @@
     state: installed
 
 - name: Load Schema
-  ansible.builtin.shell: mongo --host mongodb-dev.varundevops.online </app/schema/{{component}}.js
+  ansible.builtin.shell: mongo --ssl --host dev-docdb-cluster.cluster-crn68o0cyx1v.us-east-1.docdb.amazonaws.com:27017 --sslCAFile global-bundle.pem --username docdbadmin --password roboshop1234 </app/schema/{{component}}.js
+
+#mongo --host mongodb-dev.varundevops.online ...mongo schema
+
+
 
